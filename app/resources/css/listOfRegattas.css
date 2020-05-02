@@ -1,4 +1,4 @@
-.listOfClasses{
+.listOfRegattas{
     background-color: rgba(112, 112, 112, 0.2);
     border-radius: 10px;
     padding: 20px;
@@ -36,7 +36,7 @@ h1{
     color: #4ea9ff;
 }   
 
-.courseListButtons{
+.regattaListButtons{
     font-family: 'Roboto';
     background-color: #666666;
     color: white;
@@ -54,7 +54,7 @@ button:hover{
 }
 
 @media (max-width: 776px) {
-    .listOfClasses {
+    .listOfRegattas {
         background-color: rgba(112, 112, 112, 0.2);
         border-radius: 10px;
         padding: 20px;
@@ -65,7 +65,7 @@ button:hover{
         margin-right: 0;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     }
-    .courseListButtons{
+    .regattaListButtons{
         margin: 0;
         width: 100%;
     }

@@ -33,6 +33,22 @@
             }
         }
 
+        public function regattaList()
+        {
+            $result = $this->getRegattaIdName();
+           
+            foreach($result as $res){
+                echo "<table>";
+                echo '<tr>';
+                    echo '<td>'. $res["RaceName"] . '</td>';  
+                    echo '<td>' . "<button class='regattaListButtons'>Delete</button>" . '</td>';
+                    echo '<td>' . "<button class='regattaListButtons'>Change</button>" . '</td>';
+                echo "</tr>";
+                echo "</table>";
+            }
+            
+        }
+
         
     }
 

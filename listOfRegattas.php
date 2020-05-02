@@ -6,19 +6,19 @@
 <html>
 
 <head>
-    <title>List of Classes</title>
+    <title>List of regattas</title>
     <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="app/resources/css/listOfClasses.css"> 
+    <link rel="stylesheet" type="text/css" href="app/resources/css/listOfRegattas.css"> 
 </head>
 
 <body>
 
     <?php include 'app/resources/views/layout/navbar.php'; ?>
 
-    <div class="listOfClasses">
-        <h1>List of classes</h1>
+    <div class="listOfRegattas">
+        <h1>List of regattas</h1>
         <?php
-        $courseObj->courseList();
+        $regattaObj->regattaList();
         ?>
     </div>
     
