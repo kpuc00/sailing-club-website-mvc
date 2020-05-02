@@ -67,6 +67,16 @@
             return $stmt->fetchAll();
         }
 
+        protected function getNameLastName()
+        {
+            $sql = "SELECT coachName, coachLastName FROM coaches;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        }
+
 
     }
 
