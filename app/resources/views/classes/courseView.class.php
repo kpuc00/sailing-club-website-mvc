@@ -31,6 +31,19 @@
             }
         }
 
+        public function courseList()
+        {
+            $result = $this->getCourseIdName();
+
+            foreach($result as $res){
+                echo "<div class=listItems>";
+                echo $res["ClassName"];
+                echo "<button>Delete</button>";
+                echo "<button>Change</button>";
+                echo "</div>";
+            }
+        }
+
     }
 
 ?>
