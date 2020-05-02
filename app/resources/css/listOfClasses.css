@@ -11,9 +11,23 @@
     text-align: center;
 }
 
-.listItems{
-    padding-right: 10px;
+table {
+    background-color: rgba(112, 112, 112, 0.2);
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
     text-align: center;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    width: 40px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 
 h1{
@@ -22,17 +36,17 @@ h1{
     color: #4ea9ff;
 }   
 
-button{
+.courseListButtons{
     font-family: 'Roboto';
     background-color: #666666;
     color: white;
     font-weight: bold;
     margin: 10px;
-    margin-left: 30px;
     padding: 12px 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    width: 50%;
 }
 
 button:hover{

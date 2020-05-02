@@ -34,14 +34,17 @@
         public function courseList()
         {
             $result = $this->getCourseIdName();
-
+           
             foreach($result as $res){
-                echo "<div class=listItems>";
-                echo $res["ClassName"];
-                echo "<button>Delete</button>";
-                echo "<button>Change</button>";
-                echo "</div>";
+                echo "<table>";
+                echo '<tr>';
+                    echo '<td>'. $res["ClassName"] . '</td>';  
+                    echo '<td>' . "<button class='courseListButtons'>Delete</button>" . '</td>';
+                    echo '<td>' . "<button class='courseListButtons'>Change</button>" . '</td>';
+                echo "</tr>";
+                echo "</table>";
             }
+            
         }
 
     }
