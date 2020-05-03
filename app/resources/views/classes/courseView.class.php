@@ -37,11 +37,15 @@
            
             foreach($result as $res){
                 echo "<table>";
-                echo '<tr>';
-                    echo '<td>'. $res["ClassName"] . '</td>';  
-                    echo '<td>' . "<button class='courseListButtons'>Delete</button>" . '</td>';
-                    echo '<td>' . "<button class='courseListButtons'>Change</button>" . '</td>';
-                echo "</tr>";
+                    echo '<tr>';
+                        echo '<td>'. $res["ClassName"] . '</td>';  
+                        echo '<td>'. 
+                                '<form action="" method="POST">'.
+                                    '<button id="delete" type="submit">'. 'Delete' . '</button>'
+                                .'</form>'
+                            .'</td>';
+                        echo '<td>' . "<button class='courseListButtons'>Change</button>" . '</td>';
+                    echo "</tr>";
                 echo "</table>";
             }
             

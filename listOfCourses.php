@@ -18,7 +18,8 @@
     <div class="listOfClasses">
         <h1>List of classes</h1>
         <?php
-        $courseObj->courseList();
+            $courseObj= new courseView();
+            $courseObj->courseList();
         ?>
     </div>
     
