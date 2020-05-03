@@ -19,6 +19,11 @@
 
             return $coach;
         }
+
+        public function getCoachNameLastName()
+        {
+            return $this->getNameLastName();
+        }
     }
 
 ?>
