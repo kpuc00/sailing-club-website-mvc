@@ -31,22 +31,22 @@
             }
         }
 
-        public function courseList()
+        public function list()
         {
             $result = $this->getCourseIdName();
            
-            foreach($result as $res){
-                echo "<table>";
+            foreach($result as $res) {
+                echo '<table>';
                     echo '<tr>';
-                        echo '<td>'. $res["ClassName"] . '</td>';  
+                        echo '<td>' . $res["ClassName"] . '</td>';
+                        echo '<td>' . "<button id='change'>Change</button>" . '</td>';
                         echo '<td>'. 
                                 '<form action="" method="POST">'.
                                     '<button id="delete" type="submit">'. 'Delete' . '</button>'
                                 .'</form>'
                             .'</td>';
-                        echo '<td>' . "<button class='courseListButtons'>Change</button>" . '</td>';
-                    echo "</tr>";
-                echo "</table>";
+                    echo '</tr>';
+                echo '</table>';
             }
             
         }

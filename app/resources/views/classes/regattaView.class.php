@@ -33,23 +33,25 @@
             }
         }
 
-        public function regattaList()
+        public function list() 
         {
             $result = $this->getRegattaIdName();
-           
-            foreach($result as $res){
-                echo "<table>";
-                echo '<tr>';
-                    echo '<td>'. $res["RaceName"] . '</td>';  
-                    echo '<td>' . "<button class='regattaListButtons'>Delete</button>" . '</td>';
-                    echo '<td>' . "<button class='regattaListButtons'>Change</button>" . '</td>';
-                echo "</tr>";
-                echo "</table>";
-            }
-            
-        }
 
-        
+            foreach($result as $res) {
+                echo '<table>';
+                    echo '<tr>';
+                        echo '<td>' . $res["RaceName"] . '</td>';
+                        echo '<td>' . '<a href="?regattaId='. $res["raceID"].'" id="change" class="popup-show">'. "Change" .'</a>' . '</td>';
+                        echo '<td>'. 
+                                '<form action="" method="POST">'.
+                                    '<button id="delete" type="submit">'. 'Delete' . '</button>'
+                                .'</form>'
+                            .'</td>';
+                    echo '</tr>';
+                echo '</table>';
+            }
+        } 
+
     }
 
 ?>

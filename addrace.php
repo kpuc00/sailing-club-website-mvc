@@ -26,7 +26,7 @@
         <div id="addRaceError"></div>
         <hr>
 
-        <input type="submit" name="submit" value="Add Race">
+        <button type="submit">submit</button>
         
         </form>
     </div>

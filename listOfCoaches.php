@@ -1,7 +1,7 @@
 <?php
     include 'app/includes/main.inc.php'; 
     
-    $coachObj = new coachView();
+    
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +10,18 @@
 <head>
     <title>List of coachess</title>
     <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="app/resources/css/listOfCoaches.css"> 
+    <link rel="stylesheet" type="text/css" href="app/resources/css/list.css"> 
 </head>
 
 <body>
 
     <?php include 'app/resources/views/layout/navbar.php'; ?>
 
-    <div class="listOfCoaches">
+    <div class="list">
         <h1>List of coaches</h1>
         <?php
-        $coachObj->coachList();
+            $coachObj = new coachView();
+            $coachObj->list();
         ?>
     </div>
     
