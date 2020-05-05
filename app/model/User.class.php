@@ -97,6 +97,8 @@
                     $stmt = $this->connect()->prepare($sql);
                     $stmt->execute([$user->getId()]);
                     $stmt->closeCursor();
+
+                    $this->saveUserDataToSession($user);
                 }
             }
         }
@@ -130,6 +132,8 @@
                 $user->setUserType($givenUsertype);
                 $user->setProfilePicture($givenProfilepicture);
                 $stmt->closeCursor();
+
+                $this->login($user);
             }
         }
 

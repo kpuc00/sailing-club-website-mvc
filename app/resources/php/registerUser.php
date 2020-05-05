@@ -46,8 +46,6 @@
             $user = new User(0, $username, $displayname, $email, null, null, $password);
             $UsersController = new UsersController();
             $UsersController->registerUser($user);
-            $UsersController->authenticateUser($user);
-            $UsersController->saveUserToSession($user);
 
             header('Location: ../../../register.php');
         }
