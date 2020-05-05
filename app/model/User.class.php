@@ -63,7 +63,6 @@
         {
             $this->setId($id);
             $this->setUsername($username);
-            $this->setUsername($username);
             $this->setDisplayName($displayName);
             $this->setEmail($email);
             $this->setUserType($userType);
@@ -72,19 +71,82 @@
 
         }
 
-        protected function login($username,$password) 
+        protected function login($user) 
         {
-            //code
+            $sql = "SELECT id, password, displayname, usertype, profilepicture FROM accounts WHERE username = ?";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$user->getUsername()]);
+            $stmt->bindColumn('id', $givenId);
+            $stmt->bindColumn('password', $givenPassword);
+            $stmt->bindColumn('displayname', $givenDisplayname);
+            $stmt->bindColumn('usertype', $givenUsertype);
+            $stmt->bindColumn('profilepicture', $givenProfilepicture);
+
+            if ($stmt->fetchColumn() > 0) 
+            {
+                if (password_verify($user->getPassword(), $givenPassword))
+                {
+                    $user->setId($givenId);
+                    $user->setDisplayName($givenDisplayname);
+                    $user->setUserType($givenUsertype);
+                    $user->setProfilePicture($givenProfilepicture);
+                    $stmt->closeCursor();
+
+                    $sql = "UPDATE accounts SET lastlogin = NOW() WHERE id = ?";
+                    $stmt = $this->connect()->prepare($sql);
+                    $stmt->execute([$user->getId()]);
+                    $stmt->closeCursor();
+                }
+            }
         }
 
         protected function register($user) 
         {
-            //code
+            $sql = "SELECT id FROM accounts WHERE username = ?";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$user->getUsername()]);
+
+            if ($stmt->fetchColumn() < 1) 
+            {
+                $stmt->closeCursor();
+                $sql = "INSERT INTO accounts (username, password, email, displayname) VALUES (?, ?, ?, ?)";
+
+                $hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute([$user->getUsername(), $hashedPassword, $user->getEmail(), $user->getDisplayName()]);
+                $stmt->closeCursor();
+
+                $sql = "SELECT id, usertype, profilepicture FROM accounts WHERE username = ?";
+
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute([$user->getUsername()]);
+                $stmt->bindColumn('id', $givenId);
+                $stmt->bindColumn('usertype', $givenUsertype);
+                $stmt->bindColumn('profilepicture', $givenProfilepicture);
+
+                $user->setId($givenId);
+                $user->setUserType($givenUsertype);
+                $user->setProfilePicture($givenProfilepicture);
+                $stmt->closeCursor();
+            }
+        }
+
+        protected function saveUserDataToSession($user)
+        {
+            session_regenerate_id();
+			$_SESSION['loggedin'] = TRUE;
+			$_SESSION['id'] = $user->getId();
+			$_SESSION['username'] = $user->getUsername();
+			$_SESSION['displayname'] = $user->getDisplayName();
+            $_SESSION['usertype'] = $user->getUserType();
+            $_SESSION['profilepicture'] = $user->getProfilePicture();
         }
 
         protected function logout()
         {
-            //code
+            session_destroy();
         }
 
         public function getAll() 

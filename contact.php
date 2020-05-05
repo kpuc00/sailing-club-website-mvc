@@ -7,6 +7,7 @@
 
     <head>
         <title>Contact</title>
+        <?php include 'app/resources/php/head.php'; ?>
         <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
         <link rel="stylesheet" type="text/css" href="app/resources/css/contact.css">
     </head>
@@ -45,12 +46,12 @@
                 <h3>Feel free to message us. We will respond you as soon as we can!</h3>
                 <h4>Coaches:</h4>
                 <p>
-                    <?php echo "<img class='profilepic' src='images/profilepictures/". $pickpuc . "'><br>"?>
+                    <?php echo "<img class='profilepic' src='app/storage/images/profilepictures/kpuc.jpg'><br>"?>
                     <strong>Kristiyan Strahilov</strong><br>
                     k.strahilov@student.fontys.nl
                 </p>
                 <p>
-                    <?php echo "<img class='profilepic' src='images/profilepictures/". $picmichael . "'><br>"?>
+                    <?php echo "<img class='profilepic' src='app/storage/images/profilepictures/Polygonal Reindeer Colorful Desktop Wallpaper.jpg'><br>"?>
                     <strong>Michael Groenewegen van der Weijden</strong><br>
                     m.groenewegenvanderweijden@student.fontys.nl
                 </p>

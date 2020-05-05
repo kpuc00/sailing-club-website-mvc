@@ -4,10 +4,10 @@
 
 <?php
 // If the user is not logged in redirect to the login page...
-// if (!isset($_SESSION['loggedin'])) {
-// 	header('Location: login.php');
-// 	exit;
-// }
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: login.php');
+	exit;
+}
 
 // //database connection
 // require 'fetchData/connection.php';
@@ -39,7 +39,7 @@
 
 <head>
 	<title>Profile</title>
-	<?php require_once("php/head.php");?>
+	<?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/profile.css">
 </head>
@@ -82,7 +82,7 @@
 	</div>
 
 	<div class="rightColumn">
-	<?php echo "<img class='profilepic' src='app/storage/images/". $somecoded ."'>"; ?>
+	<?php echo "<img class='profilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'>"; ?>
 	<h3><?=$_SESSION['displayname']?></h3>
 	<?php 
 	if($_SESSION['usertype'] == "Admin"){

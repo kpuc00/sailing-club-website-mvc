@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="app/storage/images/page-img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="app/storage/images/page-img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="app/resources/css/navbar.css">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <meta name="thumbnail" content="images/thumbnail.jpg" />

@@ -10,8 +10,6 @@
 // $getnavpic->close();
 ?> -->
 <?php
-    include 'app/resources/php/head.php';
-
     $courseObj = new courseView();
     $regattaObj = new regattaView();
 ?>
@@ -44,22 +42,22 @@
             </div>
             <a href="contact.php"><i class="fa fa-address-card"></i> Contact</a>
             <div class="right-button">
-            <!-- <?php
+            <?php
                             
                             if(isset($_SESSION['loggedin']) && $_SESSION['usertype'] == "User"){
-                                echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
-                                echo "<div class='profilebtn'><a href='profile.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."'> <span>" . $_SESSION['displayname'];
+                                echo "<a href='logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
+                                echo "<div class='profilebtn'><a href='profile.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'> <span>" . $_SESSION['displayname'];
                                 echo "</span></marquee></a></div>"; 
                             }
                             else if(isset($_SESSION['loggedin']) && $_SESSION['usertype'] == "Admin"){
-                                echo "<a href='auth/logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
-                                echo "<div class='profilebtn'><a href='adminpage.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='images/profilepictures/".$navprofilepic."'> <span>" . $_SESSION['displayname'];
+                                echo "<a href='logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
+                                echo "<div class='profilebtn'><a href='adminpage.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'> <span>" . $_SESSION['displayname'];
                                 echo "</span></marquee></a></div>"; 
                             }
                             else{
                                 echo "<a href='login.php'><i class='fa fa-sign-in'></i> Login</a></div>";
                             }
-                        ?> -->
+                        ?>
                 </div>
             </div>
 
