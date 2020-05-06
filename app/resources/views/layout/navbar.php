@@ -1,15 +1,13 @@
-<!-- <?php
-
-
-// //get user picture path from database
-// $getnavpic = $conn->prepare('SELECT profilepicture FROM accounts WHERE id = ?');
-// $getnavpic->bind_param('i', $_SESSION['id']);
-// $getnavpic->execute();
-// $getnavpic->bind_result($navprofilepic);
-// $getnavpic->fetch();
-// $getnavpic->close();
-?> -->
 <?php
+    $userObj = new userView();
+
+    // //If the user is logged in, the user's data is updated in the session after each page reload
+    if (isset($_SESSION['loggedin'])) {
+        if ($_SESSION['loggedin'] == true) {
+            $userObj->updateUserData($_SESSION['id']);           
+        }
+    }    
+
     $courseObj = new courseView();
     $regattaObj = new regattaView();
 ?>

@@ -21,3 +21,5 @@
     </body>
     
 </html>
+
+<?php $_SESSION['error'] = null; $_SESSION['success'] = null; ?>

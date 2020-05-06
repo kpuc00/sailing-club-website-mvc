@@ -9,3 +9,13 @@ body {
     scroll-behavior: smooth;
     word-break: break-word;
 }
+
+.error {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.success {
+    color: #0084ff;
+    font-weight: bold;
+}

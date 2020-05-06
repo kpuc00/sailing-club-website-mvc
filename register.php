@@ -34,9 +34,12 @@ if (isset($_SESSION['loggedin'])) {
             <form action="app/resources/php/registerUser.php" method="post">
                 <h3>Enter your personal data:</h3>
 
-                <div class="error">
-                    <p><?php //error message here ?></p>
-                </div>
+                <?php
+                    if (isset($_SESSION['error'])) 
+                    {
+                        echo '<div class="error"><p>' . $_SESSION['error'] .'</p></div>';
+                    }
+			    ?>
 
                 <hr>
 

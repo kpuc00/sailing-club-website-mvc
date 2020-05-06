@@ -11,6 +11,16 @@
         {
             $this->create($message);
         }
+
+        public function getAllMessages()
+        {
+            return $this->getAll();
+        }
+
+        public function deleteSelectedMessage($id)
+        {
+            $this->deleteMessage($id);
+        }
     }
 
 ?>

@@ -1,3 +1,6 @@
+<?php
+    include 'app/includes/main.inc.php'; 
+?>
 
 <!DOCTYPE html>
 <html>

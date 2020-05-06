@@ -13,6 +13,7 @@
             $user = new User(0, $username, null, null, null, null, $password);
             $UsersController = new UsersController();
             $UsersController->authenticateUser($user);
+            $_SESSION['error'] = $UsersController->checkForErrors($user);
                
             header('Location: ../../../login.php');
         }
