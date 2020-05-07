@@ -41,15 +41,17 @@
                 echo '<table>';
                     echo '<tr>';
                         echo '<td>' . $res["RaceName"] . '</td>';
-                        echo '<td>' . '<a href="?regattaId='. $res["raceID"].'" id="change" class="popup-show">'. "Change" .'</a>' . '</td>';
+                        echo '<td>' . '<a href="editRegatta.php?regattaId='. $res["raceID"].'" id="change">'. "Edit" .'</a>' . '</td>';
                         echo '<td>'. 
                                 '<form action="" method="POST">'.
+                                    '<input value='. $res["raceID"] .' type="hidden" name="id">'
                                     '<button id="delete" type="submit">'. 'Delete' . '</button>'
                                 .'</form>'
                             .'</td>';
                     echo '</tr>';
                 echo '</table>';
             }
+
         } 
 
     }

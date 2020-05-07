@@ -4,7 +4,7 @@
     {
         //Properties
         private $id;
-        private $Name;
+        private $name;
 
         //id
         public function getId() { return $this->id; }
@@ -12,13 +12,14 @@
         protected function setId($id) { $this->id = $id; } 
 
         //regattaName
-        public function getName() { return $this->regattaName; }
+        public function getName() { return $this->name; }
 
-        protected function setName($regattaName) { $this->regattaName = $regattaName; }
+        protected function setName($regattaName) { $this->name = $name; }
 
-        public function __construct()
+        public function __construct($id, $name)
         {
-
+            $this->setId($id);
+            $this->setName($name);
         }
 
         protected function getAll()
@@ -26,9 +27,14 @@
 
         }
 
-        protected function getRegatta()
+        protected function getRegattaById($id)
         {
+            $sql = "SELECT * FROM races WHERE raceID = ?";
 
+            $stmt = $this->connect()->prepare($sql);
+            $stmt = execute([$id]);
+
+            return $stmt->fetchAll();
         }
 
         protected function getRegattaCompetitorsByRegattaId($id)
