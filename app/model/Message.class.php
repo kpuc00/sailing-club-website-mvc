@@ -52,7 +52,22 @@
             $stmt->execute([$message->getName(), $message->getEmail(), $message->getPhone(), $message->getMessage()]);
         }
 
+        protected function getAll()
+        {
+            $sql = "SELECT * FROM contact";
 
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        }
+
+        protected function deleteMessage($givenId)
+        {
+            $sql = "CALL DeleteMessage('$givenId')";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+        }
 
 
     }

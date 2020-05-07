@@ -3,11 +3,11 @@
 ?>
 
 <?php
-// If the user is logged in redirect to the index page...
-// if (isset($_SESSION['loggedin'])) {
-//     header('Location: index.php');
-//     exit;
-// }
+//If the user is logged in redirect to the index page...
+if (isset($_SESSION['loggedin'])) {
+    header('Location: index.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +15,7 @@
 
 <head>
     <title>Login</title>
+    <?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/login.css">
 </head>
@@ -30,12 +31,15 @@
 
         <div class="form">
 
-            <form action="" method="post">
+            <form action="app/resources/php/auth.php" method="post">
                 <h3>Enter your credentials:</h3>
 
-                <div class="error">
-                    <p><?php echo $msg; ?></p>
-                </div>
+                <?php
+                    if (isset($_SESSION['error'])) 
+                    {
+                        echo '<div class="error"><p>' . $_SESSION['error'] .'</p></div>';
+                    }
+			    ?>
 
                 <hr>
 

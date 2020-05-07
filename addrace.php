@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once("php/head.php");?>
+    <title>Add race</title>
+    <?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
     

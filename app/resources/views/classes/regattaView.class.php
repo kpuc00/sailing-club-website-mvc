@@ -12,7 +12,7 @@
             $result = $this->getRegattaIdName();
 
             foreach($result as $r) {
-                echo '<a href="regatta.php?regattaId='. $r["raceID"].'"> <i class="fo fa-ship>"></i>'. $r["RaceName"] .'</a>';
+                echo '<a href="regatta.php?regattaId='. $r["raceID"].'"> <i class="fa fa-ship"></i> '. $r["RaceName"] .'</a>';
             }
         }
 

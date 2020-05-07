@@ -1,5 +1,7 @@
 <?php
-    include 'app/includes/main.inc.php';        
+    include 'app/includes/main.inc.php';  
+    
+    $userObj = new userView();
 ?>
 
 <!DOCTYPE html>
@@ -7,6 +9,7 @@
 
     <head>
         <title>Contact</title>
+        <?php include 'app/resources/php/head.php'; ?>
         <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
         <link rel="stylesheet" type="text/css" href="app/resources/css/contact.css">
     </head>
@@ -23,6 +26,12 @@
 
                 <div class="form">
                     <form action="app/resources/php/InsertContactMessage.php" method="POST">
+                        <?php
+                            if (isset($_SESSION['success'])) 
+                            {
+                                echo '<div class="success"><p>' . $_SESSION['success'] .'</p></div>';
+                            }
+                        ?>
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" value="" required>
 
@@ -45,12 +54,12 @@
                 <h3>Feel free to message us. We will respond you as soon as we can!</h3>
                 <h4>Coaches:</h4>
                 <p>
-                    <?php echo "<img class='profilepic' src='images/profilepictures/". $pickpuc . "'><br>"?>
+                    <img class='profilepic' src='app/storage/images/profilepictures/<?php echo $userObj->KrisPic(); ?>'><br>
                     <strong>Kristiyan Strahilov</strong><br>
                     k.strahilov@student.fontys.nl
                 </p>
                 <p>
-                    <?php echo "<img class='profilepic' src='images/profilepictures/". $picmichael . "'><br>"?>
+                    <img class='profilepic' src='app/storage/images/profilepictures/<?php echo $userObj->MichaelPic(); ?>'><br>
                     <strong>Michael Groenewegen van der Weijden</strong><br>
                     m.groenewegenvanderweijden@student.fontys.nl
                 </p>

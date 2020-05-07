@@ -1,11 +1,18 @@
 <?php
+<<<<<<< HEAD
     include 'app/includes/main.inc.php';     
 ?>
+=======
+    include 'app/includes/main.inc.php'; 
+?>
+
+>>>>>>> master
 <!DOCTYPE html>
 <html>
 
     <head>
         <title>Regatta 2019</title>
+        <?php include 'app/resources/php/head.php'; ?>
         <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
         <link rel="stylesheet" type="text/css" href="app/resources/css/regatta.css">
     </head>

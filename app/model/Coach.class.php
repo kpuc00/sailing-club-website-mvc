@@ -77,6 +77,13 @@
             return $stmt->fetchAll();
         }
 
+        protected function updateNameLastName($name,$lastName,$id)
+        {
+            $sql = "UPDATE coaches SET coachName = ?, coachLastName = ?  WHERE coachID = ?;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$name,$lastName,$id]); 
+        }
 
     }
 

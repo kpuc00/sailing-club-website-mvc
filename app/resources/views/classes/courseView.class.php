@@ -27,7 +27,7 @@
             $result = $this->getCourseIdName();
 
             foreach($result as $r) {
-                echo '<a href="class.php?courseId='. $r["classID"].'"> <i class="fo fa-ship>"></i>'. $r["ClassName"] .'</a>';
+                echo '<a href="class.php?courseId='. $r["classID"].'"> <i class="fa fa-file"></i> '. $r["ClassName"] .'</a>';
             }
         }
 

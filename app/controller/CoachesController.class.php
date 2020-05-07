@@ -24,6 +24,11 @@
         {
             return $this->getNameLastName();
         }
+
+        public function updateNameLastName($name,$lastName,$id)
+        {
+            return $this->updateNameLastName($name,$lastName,$id);
+        }
     }
 
 ?>

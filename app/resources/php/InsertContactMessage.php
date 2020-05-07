@@ -12,6 +12,7 @@
 
     $ContactFormController = new ContactFormController();
     $ContactFormController->insertMessage($message);
+    $_SESSION['success'] = "Your message has been sent. We will respond you soon!";
 
-    header("Location: ../../../index.php");
+    header("Location: ../../../contact.php");
 ?>

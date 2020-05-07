@@ -69,6 +69,13 @@
             return $stmt->fetchAll();
         }
 
+        protected function updateName($name,$id)
+        {
+            $sql = "UPDATE classes SET ClassName = ? WHERE classID = ?;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$name,$id]); 
+        }
 
     }
 

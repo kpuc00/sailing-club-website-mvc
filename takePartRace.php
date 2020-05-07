@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Race registration</title>
-    <?php require_once("php/head.php");?>
+    <?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="css/takePartRace.css">    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="javascript/validateTakePartRaceInput.js"></script>
