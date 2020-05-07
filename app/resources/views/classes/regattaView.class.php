@@ -43,8 +43,8 @@
                         echo '<td>' . $res["RaceName"] . '</td>';
                         echo '<td>' . '<a href="editRegatta.php?regattaId='. $res["raceID"].'" id="change">'. "Edit" .'</a>' . '</td>';
                         echo '<td>'. 
-                                '<form action="" method="POST">'.
-                                    '<input value='. $res["raceID"] .' type="hidden" name="id">'
+                                '<form action="app/resources/php/DeleteRegatta.php" method="POST">'.
+                                    '<input value='. $res["raceID"] .' type="hidden" name="id">'.
                                     '<button id="delete" type="submit">'. 'Delete' . '</button>'
                                 .'</form>'
                             .'</td>';

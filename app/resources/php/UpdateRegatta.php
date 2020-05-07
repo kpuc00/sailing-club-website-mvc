@@ -3,10 +3,10 @@
     $path .= "/mvc-model/app/includes/main.inc.php";
     include "$path";
 
-    $regatta = new Regatta(0, $_POST["raceName"]);
+    $regatta = new Regatta($_POST["id"], $_POST["raceName"]);
     $RegattasController = new RegattasController();
 
-    $RegattasController->create($regatta);
+    $RegattasController->update($regatta);
 
     header("Location: ../../../listOfRegattas.php");
 ?>

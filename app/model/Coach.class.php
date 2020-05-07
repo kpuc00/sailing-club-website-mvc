@@ -57,6 +57,16 @@
 
         }
 
+        protected function getCoachById($id)
+        {
+            $sql = "SELECT * FROM coaches WHERE coachID = ?";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$id]);
+
+            return $stmt->fetchAll();
+        }
+
         protected function getCoachByCourseId($id)
         {
             $sql = "SELECT * FROM coaches WHERE classID = ?";
@@ -69,7 +79,7 @@
 
         protected function getNameLastName()
         {
-            $sql = "SELECT coachName, coachLastName FROM coaches;";
+            $sql = "SELECT coachID, coachName, coachLastName FROM coaches;";
 
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute();
@@ -85,6 +95,47 @@
             $stmt->execute([$name,$lastName,$id]); 
         }
 
+        public  function getAvailable() 
+        {
+            $sql = "SELECT * FROM coaches WHERE classID = NULL";
+            
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        }
+
+        protected function updateCoachCourses($coach, $courseId) 
+        {
+            $sql = "UPDATE coaches SET classID = ?  WHERE coachID = ?;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$courseId, $coach->getId()]);
+        }
+
+        protected function create($coach) 
+        {
+            $sql = "INSERT coaches (coachName, coachLastName, coachPicture, coachDescription) VALUES (?, ?, ?, ?);";
+            
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$coach->getFirstName(), $coach->getLastName(), $coach->getPicture(), $coach->getDescription()]);
+        }
+
+        protected function update($coach)
+        {
+            $sql = "UPDATE coaches SET coachName = ?, coachLastName = ?, coachPicture = ?, coachDescription = ?  WHERE coachID = ?;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$coach->getFirstName(), $coach->getLastName(), $coach->getPicture(), $coach->getDescription(), $coach->getId()]); 
+        }
+
+        protected function delete($coach) 
+        {
+            $sql = "DELETE FROM coaches WHERE coachID = ?;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$coach->getId()]);
+        }
     }
 
 ?>

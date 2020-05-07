@@ -14,7 +14,7 @@
         //regattaName
         public function getName() { return $this->name; }
 
-        protected function setName($regattaName) { $this->name = $name; }
+        protected function setName($name) { $this->name = $name; }
 
         public function __construct($id, $name)
         {
@@ -32,7 +32,7 @@
             $sql = "SELECT * FROM races WHERE raceID = ?";
 
             $stmt = $this->connect()->prepare($sql);
-            $stmt = execute([$id]);
+            $stmt->execute([$id]);
 
             return $stmt->fetchAll();
         }
@@ -57,12 +57,28 @@
             return $stmt->fetchAll();
         }
 
-        protected function updateName($name,$id)
+        protected function create($regatta) 
+        {
+            $sql = "INSERT INTO races (RaceName) VALUES (?);"   ;
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$regatta->getName()]);
+        }
+        
+        protected function update($regatta)
         {
             $sql = "UPDATE races SET RaceName = ? WHERE raceID = ?;";
 
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$name,$id]); 
+            $stmt->execute([$regatta->getName(), $regatta->getId()]); 
+        }
+
+        protected function delete($regatta) 
+        {
+            $sql = "DELETE FROM races WHERE raceID= ?";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$regatta->getId()]);
         }
 
     }

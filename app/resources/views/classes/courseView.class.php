@@ -39,9 +39,10 @@
                 echo '<table>';
                     echo '<tr>';
                         echo '<td>' . $res["ClassName"] . '</td>';
-                        echo '<td>' . "<button id='change'>Change</button>" . '</td>';
+                        echo '<td>' . '<a href="editCourse.php?courseId='. $res["classID"].'" id="change">'. "Edit" .'</a>' . '</td>';
                         echo '<td>'. 
-                                '<form action="" method="POST">'.
+                                '<form action="app/resources/php/DeleteCourse.php" method="POST">'.
+                                    '<input value='. $res["classID"] .' type="hidden" name="id">'.
                                     '<button id="delete" type="submit">'. 'Delete' . '</button>'
                                 .'</form>'
                             .'</td>';
@@ -50,6 +51,8 @@
             }
             
         }
+
+
 
     }
 

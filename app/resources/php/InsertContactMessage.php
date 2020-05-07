@@ -1,6 +1,6 @@
 <?php
     $path = $_SERVER['DOCUMENT_ROOT'];
-    $path .= "/sailing-website-mvc/app/includes/main.inc.php";
+    $path .= "/mvc-model/app/includes/main.inc.php";
     include "$path";
 
     $name = $_POST["name"];

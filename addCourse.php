@@ -1,16 +1,19 @@
+<?php
+    include 'app/includes/main.inc.php';        
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Add class</title>
         <?php include 'app/resources/php/head.php'; ?>
-        <link rel="stylesheet" type="text/css" href="css/bodystyle.css">
-        <link rel="stylesheet" type="text/css" href="css/add.css">
-        <script type="text/javascript" src="javascript/validateClassInput.js"></script>
-
+        <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
+        <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
     </head>
     <body>
         
-    <?php require_once("php/navbar.php"); ?>
+    <!-- Navigation Bar -->
+    <?php include 'app/resources/views/layout/navbar.php'; ?>
 
     <div class="content">
 
@@ -18,7 +21,7 @@
 
         <div class="form">
 
-            <form action="fetchData/insertClass.php" method="POST" onsubmit="return validate()" enctype="multipart/form-data">
+            <form action="app/resources/php/InsertCourse.php" method="POST"  enctype="multipart/form-data">
             <h3>Enter the class details:</h3>
 
             <hr>
@@ -34,15 +37,16 @@
 
             <hr>
 
-            <input type="submit" name="submit" value="Add Race">
+            <button type="submit" name="submit">submit</button>
 
             </form>
         </div>
 
     </div>
 
+    <!-- Footer -->
     <footer>
-        <?php require_once("php/footer.php"); ?>
+        <?php include 'app/resources/views/layout/footer.php'; ?>
     </footer>
 
 

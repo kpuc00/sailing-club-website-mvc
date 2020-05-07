@@ -33,10 +33,23 @@
             return $this->getIdName();
         }
 
-        public function updateName($name,$id)
+        public function create($course)
         {
-            return $this->updateName($name,$id);
+            parent::create($course);
         }
+
+        public function update($course)
+        {
+            parent::update($course);
+        }
+
+        public function delete($course)
+        {
+            parent::delete($course);
+        }
+
+
+
     }
 
 ?>

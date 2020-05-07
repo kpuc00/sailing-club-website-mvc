@@ -33,9 +33,18 @@
             return $competitors;
         }
 
-        protected function updateName($name,$id)
+        public function create($regatta)
         {
-            return $this->updateName($name,$id);
+            parent::create($regatta);
+        }
+        public function update($regatta)
+        {
+            parent::update($regatta);
+        }
+
+        public function delete($regatta)
+        {
+            parent::delete($regatta);
         }
 
     }
