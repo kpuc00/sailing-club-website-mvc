@@ -32,6 +32,11 @@
         {
             return $this->getIdName();
         }
+
+        public function updateName($name,$id)
+        {
+            return $this->updateName($name,$id);
+        }
     }
 
 ?>

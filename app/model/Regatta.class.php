@@ -51,6 +51,14 @@
             return $stmt->fetchAll();
         }
 
+        protected function updateName($name,$id)
+        {
+            $sql = "UPDATE races SET RaceName = ? WHERE raceID = ?;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$name,$id]); 
+        }
+
     }
 
 ?>

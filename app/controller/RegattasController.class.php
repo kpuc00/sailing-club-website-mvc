@@ -25,6 +25,11 @@
             return $competitors;
         }
 
+        protected function updateName($name,$id)
+        {
+            return $this->updateName($name,$id);
+        }
+
     }
 
 ?>
