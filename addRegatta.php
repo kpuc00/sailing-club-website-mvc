@@ -7,7 +7,6 @@
 <head>
     <title>Add race</title>
     <?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
     
     <script type="text/javascript" src="javascript/validateRaceInput.js"></script>
@@ -32,7 +31,7 @@
             <div id="addRaceError"></div>
             <hr>
 
-            <button type="submit">submit</button>
+            <input type="submit" name="submit" value="Submit">
         
         </form>
     </div>

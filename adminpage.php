@@ -23,7 +23,6 @@ if ($_SESSION['usertype'] != "Admin") {
 <head>
     <title>Admin page</title>
 	<?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/adminpage.css">
 </head>
 
@@ -33,14 +32,12 @@ if ($_SESSION['usertype'] != "Admin") {
     <?php include 'app/resources/views/layout/navbar.php'; ?>
 
     <div class="content">
-
         <h1>Admin page</h1>
 
-        <div class="leftColumn">
+        <!-- Admin Nav Bar -->
+        <?php include 'app/resources/views/layout/adminnav.php'; ?>
 
-            <!-- Admin Nav Bar -->
-            <?php include 'app/resources/views/layout/adminnav.php'; ?>
-            
+        <div class="leftColumn">            
             <h3>Welcome back, <?= $_SESSION['displayname'] ?>!</h3>
             <h3>List of registered users:</h3>
             <?php $userObj->usersList(); ?>

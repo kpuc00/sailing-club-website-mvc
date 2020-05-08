@@ -11,6 +11,7 @@
         {
             $result = $this->getAllUsers();
 
+            echo "<div class='tableContainer'>";
             echo "<table>";
             echo "<tr>";
                 echo "<th colspan='2'>Username</th>";
@@ -59,7 +60,7 @@
                 echo "</tr>";
             }
 
-            echo "</table>";
+            echo "</table></div>";
         }
 
         public function updateUserData($givenId)

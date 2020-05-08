@@ -8,7 +8,6 @@
 <html lang="en">
     <head>
         <?php include 'app/resources/php/head.php'; ?>
-        <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
         <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
     </head>
     <body>
@@ -33,7 +32,7 @@
 
                 <input type="hidden" name="id" value="<?php echo $regatta->getId(); ?>">
 
-                <button type="submit">submit</button>
+                <input type="submit" name="submit" value="Submit">
                 
                 </form>
             </div>

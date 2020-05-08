@@ -10,9 +10,7 @@
     <head>
         <title>About us</title>
         <?php include 'app/resources/php/head.php'; ?>
-        <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
         <link rel="stylesheet" type="text/css" href="app/resources/css/about.css">
-        <link rel="stylesheet" type="text/css" href="app/resources/css/footer.css">
     </head>
 
     <body>

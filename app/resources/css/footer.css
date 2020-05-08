@@ -33,6 +33,5 @@ footer a:active {
 @media (max-width: 776px) {
     footer {
         min-width: 100vw;
-        max-width: 100vw;
     }
 }

@@ -9,7 +9,6 @@
 <head>
     <title>Add coach</title>
     <?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
 </head>
 <body>
@@ -40,7 +39,7 @@
             <hr>
 
             <input name="id" type="hidden" value="<?php echo $coach->getId(); ?>">
-            <button type="submit" name="submit">submit</button>
+            <input type="submit" name="submit" value="Submit">
 
         </form>
     </div>

@@ -7,7 +7,6 @@
     <head>
         <title>Add class</title>
         <?php include 'app/resources/php/head.php'; ?>
-        <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
         <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
     </head>
     <body>
@@ -37,7 +36,7 @@
 
             <hr>
 
-            <button type="submit" name="submit">submit</button>
+            <input type="submit" name="submit" value="Submit">
 
             </form>
         </div>

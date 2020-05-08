@@ -24,7 +24,6 @@ if ($_SESSION['usertype'] != "Admin") {
 <head>
     <title>Article Manager</title>
 	<?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/articles.css">
 </head>
 
@@ -34,13 +33,12 @@ if ($_SESSION['usertype'] != "Admin") {
     <?php include 'app/resources/views/layout/navbar.php'; ?>
      
     <div class="content">
-        
         <h1>Article Manager</h1>
         
         <!-- Admin Nav Bar -->
         <?php include 'app/resources/views/layout/adminnav.php'; ?>
         
-        <a class="addbtn" href="addarticle.php">Add</a>
+        <a class="button" href="addarticle.php">Add article</a>
 
         <?php $articleObj->ShowAll(); ?>        
 

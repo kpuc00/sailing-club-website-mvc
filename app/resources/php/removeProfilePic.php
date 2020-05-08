@@ -1,7 +1,5 @@
 <?php
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    $path .= "/sailing-website-mvc/app/includes/main.inc.php";
-    include "$path";
+    include '../../includes/main.inc.php';
 
     $UsersController = new UsersController();
     $UsersController->removeProfilePic($_SESSION['id']);

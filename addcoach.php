@@ -7,7 +7,6 @@
 <head>
     <title>Add coach</title>
     <?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
 
     <script type="text/javascript" src="javascript/validateCoachInput.js"></script>
@@ -41,7 +40,7 @@
 
             <hr>
 
-            <button type="submit" name="submit">submit</button>
+            <input type="submit" name="submit" value="Submit">
 
         </form>
     </div>

@@ -1,5 +1,5 @@
 <?php
-    require 'php/includes.php';
+    include 'app/includes/main.inc.php';        
 ?>
 
 <!DOCTYPE html>
@@ -7,13 +7,13 @@
 <head>
     <title>Race registration</title>
     <?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="css/takePartRace.css">    <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="app/resources/css/takePartRace.css">
     <script src="javascript/validateTakePartRaceInput.js"></script>
 </head>
 <body>
 
-    <?php require_once("php/navbar.php"); ?>
+    <!-- Navigation Bar -->
+    <?php include 'app/resources/views/layout/navbar.php'; ?>
 
     <div class = "raceRegistration">
 
@@ -54,8 +54,9 @@
 
     </div>
 
+    <!-- Footer -->
     <footer>
-        <?php require_once("php/footer.php"); ?>
+        <?php include 'app/resources/views/layout/footer.php'; ?>
     </footer>
 
 </body>

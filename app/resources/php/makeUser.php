@@ -1,7 +1,5 @@
 <?php
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    $path .= "/sailing-website-mvc/app/includes/main.inc.php";
-    include "$path";
+    include '../../includes/main.inc.php';
 
     $userID = $_GET["userId"];
 

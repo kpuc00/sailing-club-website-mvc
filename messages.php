@@ -23,7 +23,6 @@ if ($_SESSION['usertype'] != "Admin") {
 <head>
     <title>Messages</title>
     <?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/messages.css">
 </head>
 

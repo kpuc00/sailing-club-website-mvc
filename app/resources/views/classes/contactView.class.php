@@ -11,6 +11,7 @@
         {
             $result = $this->getAllMessages();
 
+            echo "<div class='tableContainer'>";
             echo "<table>";
             echo "<tr>";
                 echo "<th>Name</th>";
@@ -43,7 +44,7 @@
                 echo "</tr>";
             }
 
-            echo "</table>";
+            echo "</table></div>";
         }
     }
 

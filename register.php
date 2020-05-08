@@ -16,7 +16,6 @@ if (isset($_SESSION['loggedin'])) {
 <head>
     <title>Register</title>
     <?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/login.css">
 </head>
 

@@ -12,6 +12,7 @@
         {
             $result = $this->getArticles();
 
+            echo "<div class='tableContainer'>";
             echo "<table>";
 
             echo "<tr>";
@@ -49,7 +50,7 @@
                 echo "</tr>";
             }
 
-            echo "</table>";
+            echo "</table></div>";
         }
 
         public function ShowAboutPage($id)

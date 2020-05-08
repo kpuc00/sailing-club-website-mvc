@@ -1,7 +1,5 @@
 <?php
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    $path .= "/mvc-model/app/includes/main.inc.php";
-    include "$path";
+    include '../../includes/main.inc.php';
 
     $coach = new coach($_POST["id"], "", "", "", "", "");
     $CoachesController = new CoachesController();

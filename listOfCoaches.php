@@ -10,7 +10,6 @@
 <head>
     <title>List of coachess</title>
     <?php include 'app/resources/php/head.php'; ?>
-    <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
     <link rel="stylesheet" type="text/css" href="app/resources/css/list.css"> 
 </head>
 
