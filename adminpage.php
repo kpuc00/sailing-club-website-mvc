@@ -37,8 +37,11 @@ if ($_SESSION['usertype'] != "Admin") {
         <h1>Admin page</h1>
 
         <div class="leftColumn">
+
+            <!-- Admin Nav Bar -->
+            <?php include 'app/resources/views/layout/adminnav.php'; ?>
+            
             <h3>Welcome back, <?= $_SESSION['displayname'] ?>!</h3>
-            <a class="button" href='messages.php' title='Messages'>Messages</a>
             <h3>List of registered users:</h3>
             <?php $userObj->usersList(); ?>
         </div>
