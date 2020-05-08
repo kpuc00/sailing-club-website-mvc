@@ -10,6 +10,18 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
+.newsContent {
+    background-color: rgba(112, 112, 112, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 50vh;
+    min-width: 720px;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
 h1 {
     text-align: center;
     font-size: 30px;
@@ -148,8 +160,8 @@ tr:nth-child(even) {
 }
 
 @media (max-width: 776px) {
-    .content {
-        background-color: rgba(112, 112, 112, 0.2);
+    .content,
+    .newsContent {
         border-radius: 10px;
         padding: 20px;
         min-height: 50vh;
@@ -157,6 +169,5 @@ tr:nth-child(even) {
         min-width: unset;
         margin-left: 0;
         margin-right: 0;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     }
 }
