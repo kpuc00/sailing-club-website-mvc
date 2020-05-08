@@ -31,6 +31,7 @@ if ($_SESSION['usertype'] != "Admin") {
     <title>Edit article</title>
 	<?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/articles.css">
+    <script type="text/javascript" src="app/resources/js/validation/validateArticle.js"></script>
 </head>
 
 <body>
@@ -52,7 +53,7 @@ if ($_SESSION['usertype'] != "Admin") {
         </p>
 
         <div class="form">
-            <form action="app/resources/php/updateArticle.php" method="POST">
+            <form action="app/resources/php/updateArticle.php" method="POST" onsubmit="return validate()">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" placeholder="Title..." value="<?php echo $article->getTitle(); ?>" required>
 

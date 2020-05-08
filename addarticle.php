@@ -24,6 +24,7 @@ if ($_SESSION['usertype'] != "Admin") {
     <title>Add article</title>
 	<?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/articles.css">
+    <script type="text/javascript" src="app/resources/js/validation/validateArticle.js"></script>
 </head>
 
 <body>
@@ -41,7 +42,7 @@ if ($_SESSION['usertype'] != "Admin") {
         <h3>Hi <?= $_SESSION['displayname'] ?>. Have a good time writing this article!</h3>
 
         <div class="form">
-            <form action="app/resources/php/submitArticle.php" method="POST">
+            <form action="app/resources/php/submitArticle.php" method="POST" onsubmit="return validate()">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" placeholder="Title..." value="" required>
 
