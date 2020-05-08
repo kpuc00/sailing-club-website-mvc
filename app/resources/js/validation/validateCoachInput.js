@@ -2,12 +2,12 @@ function validate() {
     let coachFirstName = document.getElementById("coachFirstName");
     let coachLastName = document.getElementById("coachLastName");
     let coachDescription = document.getElementById("coachDescription");
-    let coachClass = document.getElementById("coachClass");
+    //let coachClass = document.getElementById("coachClass");
     let coachPicture = document.getElementById("coachPicture");
     let coachFirstNameError = document.getElementById("coachFirstNameError");
     let coachLastNameError = document.getElementById("coachLastNameError");
     let coachDescriptionError = document.getElementById("coachDescriptionError");
-    let coachClassError = document.getElementById("coachClassError");
+    //let coachClassError = document.getElementById("coachClassError");
     let coachPictureError = document.getElementById("coachPictureError");
     let coachPictureValue = coachPicture.value;
 
@@ -39,20 +39,20 @@ function validate() {
         coachLastNameError.textContent = "";
         true;
     }
-    if (coachClass.value == "") {
-        coachClass.placeholder = "The coach class is required!";
-        coachClass.style.borderColor = "red";
-        coachClass.style.borderWidth = "2px";
-        coachClassError.textContent = "Class can't be blank";
-        coachClassError.style.color = "red";
-        return false;
-    }
-    else{
-        coachClass.style.borderColor = "#ccc";
-        coachClass.style.borderWidth = "1px";
-        coachClassError.textContent = "";
-        true;
-    }
+    //if (coachClass.value == "") {
+        //coachClass.placeholder = "The coach class is required!";
+        //coachClass.style.borderColor = "red";
+        //coachClass.style.borderWidth = "2px";
+        //coachClassError.textContent = "Class can't be blank";
+        //coachClassError.style.color = "red";
+        //return false;
+    //}
+    //else{
+        //coachClass.style.borderColor = "#ccc";
+        //coachClass.style.borderWidth = "1px";
+        //coachClassError.textContent = "";
+        //true;
+    //}
     if (coachDescription.value == "") {
         coachDescription.placeholder = "The coach description is required!";
         coachDescription.style.borderColor = "red";
