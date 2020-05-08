@@ -30,7 +30,7 @@ footer a:active {
     padding: 5px;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 916px) {
     footer {
         min-width: 100vw;
     }

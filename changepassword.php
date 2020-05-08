@@ -28,6 +28,9 @@ if (!isset($_SESSION['loggedin'])) {
 
         <h1>Change password</h1>
 
+        <?php echo "<img class='profilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'>"; ?>
+	    <h3><?=$_SESSION['displayname']?></h3>
+
         <div class="form">
 
             <form action="app/resources/php/changePassword.php" method="post">

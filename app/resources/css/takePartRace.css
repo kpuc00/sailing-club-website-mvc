@@ -63,7 +63,7 @@ input[type=text] {
     min-width: 230px;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 916px) {
     .raceRegistration {
         background-color: rgba(112, 112, 112, 0.2);
         border-radius: 10px;

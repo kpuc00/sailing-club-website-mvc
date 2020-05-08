@@ -1,3 +1,7 @@
+.content {
+    text-align: center;
+}
+
 h1 {
     grid-column: 1/ 3;
     text-align: center;
@@ -37,7 +41,7 @@ input[type=submit]:hover {
 }
 
 .form {
-    width: 40vw;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -74,7 +78,7 @@ input[type=submit]:hover {
     font-size: larger;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 916px) {
     .form {
         width: 70vw;
     }

@@ -65,7 +65,7 @@
     font-size: 0.8em;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 916px) {
     .infoBox {
         height: 19em;
         width: 80%;

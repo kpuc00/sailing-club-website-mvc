@@ -9,7 +9,7 @@ function expandMenu() {
 }
 
 function showMenu() {
-    if (document.body.clientWidth > 760) {
+    if (document.body.clientWidth > 900) {
         x.style.display = "block";
     } else {
         x.style.display = "none";

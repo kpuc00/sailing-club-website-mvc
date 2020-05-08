@@ -54,7 +54,7 @@ button:hover {
     background-color: #4ea9ff;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 916px) {
     .list {
         min-height: 50vh;
         min-width: 0vw;

@@ -75,7 +75,7 @@ if (!isset($_SESSION['loggedin'])) {
 	<?php echo "<img class='profilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'>"; ?>
 	<h3><?=$_SESSION['displayname']?></h3>
 	<?php 
-	if($_SESSION['usertype'] == "Admin"){
+	if($_SESSION['usertype'] != "User"){
 		echo "<a class='button' href='adminpage.php' title='Admin page'>Admin page</a>";
 	}
 	?>	

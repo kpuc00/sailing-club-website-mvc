@@ -15,14 +15,11 @@
     text-align: center;
 }
 
-.profilepic {
-    max-width: 70%;
-    border-radius: 50%;
-}
-
 .smallprofilepic {
-    width: 3em;
+    object-fit: cover;
     border-radius: 50%;
+    height: 3em;
+    width: 3em;
 }
 
 h1 {
@@ -82,7 +79,7 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-@media (max-width: 776px) {
+@media (max-width: 916px) {
     .content {
         display: grid;
         grid-template-columns: 100%;
@@ -98,8 +95,5 @@ tr:nth-child(even) {
         grid-row: 3/4;
         text-align: center;
         margin-bottom: 2em;
-    }
-    .profilepic {
-        max-width: 40%;
     }
 }
