@@ -93,6 +93,17 @@
             }
         }
 
+        public function FillBlanks($id)
+        {
+            $result = $this->getArticleById($id);
+
+            $title = $result[0]["Title"];
+            $content = $result[0]["Content"];
+
+            $article = new Article($title, null, null, $content);
+            return $article;
+        }
+
         public function ShowByTitle($title)
         {
             $result = $this->getArticleByTitle($title);

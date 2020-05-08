@@ -2,6 +2,7 @@
     include 'app/includes/main.inc.php'; 
 
     $articleObj = new articleView();
+    $article = $articleObj->FillBlanks($_SESSION['articleId']);
 ?>
 
 <?php
@@ -53,10 +54,10 @@ if ($_SESSION['usertype'] != "Admin") {
         <div class="form">
             <form action="app/resources/php/updateArticle.php" method="POST">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title" placeholder="Title..." value="" required>
+                <input type="text" id="title" name="title" placeholder="Title..." value="<?php echo $article->getTitle(); ?>" required>
 
                 <label for="content">Content</label>
-                <textarea id="content" name="content" placeholder="Content here.." style="height:200px" required></textarea>
+                <textarea id="content" name="content" placeholder="Content here.." required><?php echo $article->getContent(); ?></textarea>
 
                 <input type="submit" value="Submit" >
             </form>
