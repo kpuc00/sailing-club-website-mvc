@@ -20,7 +20,7 @@
     <!-- Navigation Bar -->
     <?php include 'app/resources/views/layout/navbar.php'; ?>
      
-    <div class="content">
+    <div class="newsContent">
         
         <h1 class = "newsHeader">SC Fontys News</h1>
 
