@@ -200,7 +200,7 @@
 
         protected function getAll() 
         {
-            $sql = "SELECT id, username, email, usertype, lastlogin, profilepicture FROM accounts ORDER BY id";
+            $sql = "SELECT * FROM accounts ORDER BY id";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute();
 
