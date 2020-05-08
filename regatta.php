@@ -1,12 +1,7 @@
 <?php
-<<<<<<< HEAD
-    include 'app/includes/main.inc.php';     
-?>
-=======
     include 'app/includes/main.inc.php'; 
 ?>
 
->>>>>>> master
 <!DOCTYPE html>
 <html>
 
