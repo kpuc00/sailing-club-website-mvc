@@ -52,9 +52,19 @@
                     echo "</td>";
 
                     echo "<td>";
+
+                    if($row['usertype']=="Super Admin")
+                    {
+                        echo "Unavailable";
+                    }
+
+                    else 
+                    {
                         echo "<form action='app/resources/php/deleteUser.php?userId=" . $row["id"] . "' method='POST'>";
                             echo "<input type='submit' name='delete' value='Delete'/>";
                         echo "</form>";
+                    }
+                    
                     echo "</td>";
 
                 echo "</tr>";

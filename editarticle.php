@@ -19,7 +19,7 @@ if (!isset($_SESSION['articleId'])) {
 }
 
 //If the user is not an administrator redirect to homepage...
-if ($_SESSION['usertype'] != "Admin") {
+if ($_SESSION['usertype'] == "User") {
     exit('<title>403</title><h1>Forbidden</h1>');
 }
 ?>

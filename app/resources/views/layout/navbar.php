@@ -48,7 +48,7 @@
                                 echo "<div class='profilebtn'><a href='profile.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'> <span>" . $_SESSION['displayname'];
                                 echo "</span></marquee></a></div>"; 
                             }
-                            else if(isset($_SESSION['loggedin']) && $_SESSION['usertype'] == "Admin"){
+                            else if(isset($_SESSION['loggedin']) && ($_SESSION['usertype'] == "Admin" || $_SESSION['usertype'] == "Super Admin")){
                                 echo "<a href='logout.php'><i class='fa fa-sign-out'></i> Logout</a>";
                                 echo "<div class='profilebtn'><a href='adminpage.php' title='Profile'><marquee scrollamount='3'><img class='navprofilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'> <span>" . $_SESSION['displayname'];
                                 echo "</span></marquee></a></div>"; 
