@@ -15,6 +15,7 @@
             echo "<table>";
             echo "<tr>";
                 echo "<th colspan='2'>Username</th>";
+                echo "<th>Display name</th>";
                 echo "<th>E-mail</th>";
                 echo "<th>Register date</th>";
                 echo "<th>Last login</th>";
@@ -27,47 +28,40 @@
                 echo "<tr>";
                     echo "<td><img class='smallprofilepic' src='app/storage/images/profilepictures/" . $row['profilepicture'] . "'></td>";
                     echo "<td>" . $row['username'] . "</td>";
+                    echo "<td>" . $row['displayname'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
                     echo "<td>" . $row['registerdate'] . "</td>";
                     echo "<td>" . $row['lastlogin'] . "</td>";
                     echo "<td>" . $row['usertype'] . "</td>";
 
-                    echo "<td>";
-                    if($row['usertype']=="User")
-                    {
-                        echo "<form action='app/resources/php/makeAdmin.php?userId=" . $row["id"] . "' method='POST'>";
-                            echo "<input type='submit' name='makeadmin' value='Make admin'/>";
-                        echo "</form>";
-                    }
-
-                    else if($row['usertype']=="Admin")
-                    {
-                        echo "<form action='app/resources/php/makeUser.php?userId=" . $row["id"] . "' method='POST'>";
-                            echo "<input type='submit' name='makeuser' value='Make user'/>";
-                        echo "</form>";
-                    }
-                    
-                    else 
-                    {
-                        echo "Unavailable";
-                    }
-                    echo "</td>";
-
-                    echo "<td>";
-
                     if($row['usertype']=="Super Admin")
                     {
-                        echo "Unavailable";
+                        echo "<td colspan='2'>Unavailable</td>";
                     }
 
-                    else 
+                    else
                     {
-                        echo "<form action='app/resources/php/deleteUser.php?userId=" . $row["id"] . "' method='POST'>";
+                        echo "<td>";
+                        if($row['usertype']=="User")
+                        {
+                            echo "<form action='app/resources/php/makeAdmin.php?userId=" . $row["id"] . "' method='POST'>";
+                                echo "<input type='submit' name='makeadmin' value='Make admin'/>";
+                            echo "</form>";
+                        }
+
+                        else if($row['usertype']=="Admin")
+                        {
+                            echo "<form action='app/resources/php/makeUser.php?userId=" . $row["id"] . "' method='POST'>";
+                                echo "<input type='submit' name='makeuser' value='Make user'/>";
+                            echo "</form>";
+                        }
+                        
+                        echo "</td>";
+
+                        echo "<td><form action='app/resources/php/deleteUser.php?userId=" . $row["id"] . "' method='POST'>";
                             echo "<input type='submit' name='delete' value='Delete'/>";
-                        echo "</form>";
+                        echo "</form></td>";
                     }
-                    
-                    echo "</td>";
 
                 echo "</tr>";
             }

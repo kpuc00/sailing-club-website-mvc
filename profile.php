@@ -29,31 +29,46 @@ if (!isset($_SESSION['loggedin'])) {
 	<h1>Account</h1>
 
 	<div class="leftColumn">
-			<h3>Welcome back, <?=$_SESSION['displayname']?>!</h3>
+		<h3>Welcome back, <?=$_SESSION['displayname']?>!</h3>
 
-			<p>Your account details are below:</p>
-				<table>
-					<tr>
-						<td>Username:</td>
-						<td><?=$_SESSION['username']?></td>
-					</tr>
-					<tr>
-						<td>Email:</td>
-						<td><?=$_SESSION['email']?></td>
-					</tr>
-					<tr>
-						<td>User type:</td>
-						<td><?=$_SESSION['usertype']?></td>
-					</tr>
-					<tr>
-						<td>Last login:</td>
-						<td><?=$_SESSION['lastlogin']?></td>
-					</tr>
-					<tr>
-						<td>Register date:</td>
-						<td><?=$_SESSION['registerdate']?></td>
-					</tr>
-				</table>
+		<p>Your account details are below:</p>
+			<table>
+				<tr>
+					<td>Username:</td>
+					<td><?=$_SESSION['username']?></td>
+				</tr>
+				<tr>
+					<td>Display name:</td>
+					<td><?=$_SESSION['displayname']?></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><?=$_SESSION['email']?></td>
+				</tr>
+				<tr>
+					<td>User type:</td>
+					<td><?=$_SESSION['usertype']?></td>
+				</tr>
+				<tr>
+					<td>Last login:</td>
+					<td><?=$_SESSION['lastlogin']?></td>
+				</tr>
+				<tr>
+					<td>Register date:</td>
+					<td><?=$_SESSION['registerdate']?></td>
+				</tr>
+			</table>
+			
+		<form action="changepassword.php" method="post">
+			<input type="submit" name="changepassword" value="Change password">
+		</form>
+
+		<?php
+			if (isset($_SESSION['passwordsuccess'])) 
+			{
+				echo '<div class="success"><p>' . $_SESSION['passwordsuccess'] .'</p></div>';
+			}
+		?>
 	</div>
 
 	<div class="rightColumn">

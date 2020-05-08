@@ -11,27 +11,27 @@
 
         //Email Validation
         else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $errorMsg .= "Email is not valid!";
+            $errorMsg .= "The email is not valid!";
         }
 
         //Invalid Characters Validation
         else if (preg_match('/[A-Za-z0-9]+/', $_POST['username']) == 0) {
-            $errorMsg .= "Username is not valid!";
+            $errorMsg .= "The username is not valid!";
         }
 
         //Display name character Length Check
         else if (strlen($_POST['displayname']) > 20 || strlen($_POST['displayname']) < 5) {
-            $errorMsg .= "Display name must be between 5 and 20 characters long!";
+            $errorMsg .= "The display name must be between 5 and 20 characters long!";
         }
 
         //Password character Length Check
         else if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
-            $errorMsg .= "Password must be between 5 and 20 characters long!";
+            $errorMsg .= "The password must be between 5 and 20 characters long!";
         }
 
         //Checks if confirm password matches the password
         else if($_POST['passwordConfirm'] != $_POST['password']){
-            $errorMsg .= "Passwords do not match!";
+            $errorMsg .= "Password and Confirm password does not match!";
         }
 
         //register user

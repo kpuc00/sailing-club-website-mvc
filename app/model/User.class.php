@@ -164,6 +164,36 @@
                 $this->login($user);
             }
         }
+        
+        protected function checkPassword($givenId, $givenPassword)
+        {
+            $sql = "SELECT password FROM accounts WHERE id = $givenId";
+            
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+            $data = $stmt->fetchAll();
+            
+            foreach ($data as $db) 
+            {
+                $passwordFromDB = $db['password'];
+            }
+            
+            if (password_verify($givenPassword, $passwordFromDB)){
+                $_SESSION['checkpassword'] = "match";
+            }
+            
+            else {
+                $_SESSION['checkpassword'] = "wrong";
+            }
+            
+        }
+        
+        protected function changePassword($givenId, $newPassword)
+        {
+            $sql = "UPDATE accounts SET password = ? WHERE id = $givenId";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$newPassword]);
+        }
 
         protected function saveUserDataToSession($user)
         {
@@ -183,12 +213,12 @@
         {
             session_destroy();
         }
-
+        
         protected function getErrors($user)
         {
             return $user->getError();
         }
-
+        
         protected function getUser($givenId)
         {
             $sql = "SELECT * FROM accounts WHERE id = ?";

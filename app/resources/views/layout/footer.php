@@ -12,4 +12,10 @@
     Copyright © Kristiyan Strahilov, Michael Groenewegen van der Weijden, Nikola Bolic - 2020
 </div>
 
-<?php $_SESSION['error'] = null; $_SESSION['success'] = null; ?>
+<?php 
+    //Clears passed messages after page reload
+    $_SESSION['error'] = null; 
+    $_SESSION['success'] = null; 
+    $_SESSION['checkpassword'] = null; 
+    $_SESSION['passwordsuccess'] = null; 
+?>

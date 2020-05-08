@@ -21,6 +21,16 @@
         {
             $this->saveUserDataToSession($user);
         }
+
+        public function changeUserPassword($id, $newPassword)
+        {
+            $this->changePassword($id, $newPassword);
+        }
+
+        public function checkUserPassword($id, $givenPassword)
+        {
+            $this->checkPassword($id, $givenPassword);
+        }
         
         public function logoutUser()
         {
