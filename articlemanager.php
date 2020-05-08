@@ -1,7 +1,8 @@
 <?php
     include 'app/includes/main.inc.php'; 
 
-    $contactObj = new contactView();
+    $articleObj = new articleView();
+    $_SESSION['articleId'] = null;
 ?>
 
 <?php
@@ -21,31 +22,27 @@ if ($_SESSION['usertype'] != "Admin") {
 <html>
 
 <head>
-    <title>Messages</title>
-    <?php include 'app/resources/php/head.php'; ?>
+    <title>Article Manager</title>
+	<?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="app/resources/css/messages.css">
+    <link rel="stylesheet" type="text/css" href="app/resources/css/articles.css">
 </head>
 
 <body>
 
     <!-- Navigation Bar -->
     <?php include 'app/resources/views/layout/navbar.php'; ?>
-
+     
     <div class="content">
+        
+        <h1>Article Manager</h1>
+        
+        <!-- Admin Nav Bar -->
+        <?php include 'app/resources/views/layout/adminnav.php'; ?>
+        
+        <a class="addbtn" href="addarticle.php">Add</a>
 
-        <h1>Messages</h1>
-
-        <div class="messages">
-
-            <!-- Admin Nav Bar -->
-            <?php include 'app/resources/views/layout/adminnav.php'; ?>
-            
-            <h3>Messages sent from "Contact me" page:</h3>
-
-            <?php $contactObj->populateTableWithMessages(); ?>
-            
-        </div>
+        <?php $articleObj->ShowAll(); ?>        
 
     </div>
 

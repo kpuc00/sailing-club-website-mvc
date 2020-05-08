@@ -10,6 +10,12 @@ body {
     word-break: break-word;
 }
 
+hr {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #666666 inset;
+}
+
 .error {
     color: #ff0000;
     font-weight: bold;

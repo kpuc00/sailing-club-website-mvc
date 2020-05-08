@@ -17,6 +17,7 @@
             <div class="hamburger"><a href="javascript:void(0);" onclick="expandMenu()" title="Expand Menu"><i class='fa fa-bars'></i></a></div>
             <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
             <div id="hiddenlinks">
+                <a href="news.php"><i class="fa fa-book"></i> News</a>
                 <a href="about.php"><i class="fa fa-info"></i> About us</a>
                 <div class="dropdown">
                     <button class="dropbtn">
