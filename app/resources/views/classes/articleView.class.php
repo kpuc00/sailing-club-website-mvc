@@ -73,7 +73,7 @@
             foreach ($result as $row) 
             {
                 echo "<div class='article'>";
-                echo '<h3>' . $row['Title'] . '</h3><p> by ' . $row['Author'] . ', edited by ' . $row['Editor'] . ' on ' . $row['Timestamp'] .'</p><hr>';
+                echo '<h3>' . $row['Title'] . '</h3><p> by <i class="fa fa-user"></i> ' . $row['Author'] . ', edited by <i class="fa fa-user"></i> ' . $row['Editor'] . ' on <i class="fa fa-history"></i> ' . $row['Timestamp'] .'</p><hr>';
                 echo $row['Content'];
                 echo "</div>";
             }
@@ -86,7 +86,7 @@
             foreach ($result as $row) 
             {
                 echo "<div class='article'>";
-                echo '<h3>' . $row['Title'] . '</h3><p> by ' . $row['Author'] . ', edited by ' . $row['Editor'] . ' on ' . $row['Timestamp'] .'</p><hr>';
+                echo '<h3>' . $row['Title'] . '</h3><p> by <i class="fa fa-user"></i> ' . $row['Author'] . ', edited by <i class="fa fa-user"></i> ' . $row['Editor'] . ' on <i class="fa fa-history"></i> ' . $row['Timestamp'] .'</p><hr>';
                 echo $row['Content'];
                 echo "</div>";
             }
@@ -99,7 +99,7 @@
             foreach ($result as $row) 
             {
                 echo "<div class='article'>";
-                echo '<h3>' . $row['Title'] . '</h3><p> by ' . $row['Author'] . ', edited by ' . $row['Editor'] . ' on ' . $row['Timestamp'] .'</p><hr>';
+                echo '<h3>' . $row['Title'] . '</h3><p> by <i class="fa fa-user"></i> ' . $row['Author'] . ', edited by <i class="fa fa-user"></i> ' . $row['Editor'] . ' on <i class="fa fa-history"></i> ' . $row['Timestamp'] .'</p><hr>';
                 echo $row['Content'];
                 echo "</div>";
             }
