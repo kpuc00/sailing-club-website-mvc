@@ -14,6 +14,7 @@
         <title>Add class</title>
         <?php include 'app/resources/php/head.php'; ?>
         <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
+        <script type="text/javascript" src="app/resources/js/validation/validateClassInput.js"></script>
     </head>
     <body>
         
@@ -26,7 +27,7 @@
 
         <div class="form">
 
-            <form action="app/resources/php/UpdateCourse.php" method="POST"  enctype="multipart/form-data">
+            <form action="app/resources/php/UpdateCourse.php" method="POST"  enctype="multipart/form-data" onsubmit="return validate()">
             <h3>Enter the class details:</h3>
 
             <hr>

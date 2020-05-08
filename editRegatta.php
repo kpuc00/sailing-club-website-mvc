@@ -9,6 +9,7 @@
     <head>
         <?php include 'app/resources/php/head.php'; ?>
         <link rel="stylesheet" type="text/css" href="app/resources/css/add.css">
+        <script type="text/javascript" src="app/resources/js/validation/validateRaceInput.js"></script>
     </head>
     <body>
         
@@ -21,7 +22,7 @@
 
             <div class="form">
 
-                <form action="app/resources/php/UpdateRegatta.php" method="POST" >
+                <form action="app/resources/php/UpdateRegatta.php" method="POST" onsubmit="return validate()">
                 <h3>Edit the race details:</h3>
 
                 <hr>
