@@ -32,7 +32,7 @@
                             }
                         ?>
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" value="" required>
+                        <input type="name" id="name" name="name" placeholder="Your Name" value="" required>
 
                         <label for="email">E-mail</label>
                         <input type="email" id="email" name="email" placeholder="yourname@domain.com" required>
