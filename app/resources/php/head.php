@@ -5,6 +5,6 @@
 <link rel="stylesheet" type="text/css" href="app/resources/css/navbar.css">
 <link rel="stylesheet" type="text/css" href="app/resources/css/footer.css">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<meta name="thumbnail" content="images/thumbnail.jpg" />
+<meta name="thumbnail" content="app/storage/images/page-img/thumbnail.jpg" />
 <meta name="description" content="Welcome to Sailing Club Fontys Website" />
 <meta name="author" content="© Kristiyan Strahilov, Michael Groenewegen van der Weijden, Nikola Bolic" />

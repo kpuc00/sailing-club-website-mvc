@@ -1,7 +1,7 @@
 <?php
     spl_autoload_register(function($className) {
         $path = $_SERVER['DOCUMENT_ROOT'];
-        $path .= "/mvc-model/app/controller/";
+        $path .= "/public_html/app/controller/";
         $ext = ".class.php";
         $fullPath = $path . $className . $ext;
         

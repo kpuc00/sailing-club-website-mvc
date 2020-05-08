@@ -11,7 +11,7 @@
 
     
     $logoDestination = $_SERVER['DOCUMENT_ROOT'];
-    $logoDestination .= "/mvc-model/app/storage/images/course-img";
+    $logoDestination .= "/public_html/app/storage/images/course-img";
 
     move_uploaded_file($logo, $logoDestination);
 

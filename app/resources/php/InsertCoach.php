@@ -12,7 +12,7 @@
         $CoachesController->create($coach);
 
         $pictureDestination = $_SERVER['DOCUMENT_ROOT'];
-        $pictureDestination .= "/mvc-model/app/storage/images/coach-img";
+        $pictureDestination .= "/public_html/app/storage/images/coach-img";
 
         move_uploaded_file($picture, $pictureDestination);
 
