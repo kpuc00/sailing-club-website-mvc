@@ -7,6 +7,14 @@
 
         }
 
+        public function GetRegattaById($id) 
+        {
+            $regatta = parent::getRegattaById($id);
+
+            return new Regatta($regatta[0]["raceID"], $regatta[0]["RaceName"]);
+
+        }
+        
         protected function getRegattaIdName()
         {
             return $this->getIdName();
@@ -25,9 +33,18 @@
             return $competitors;
         }
 
-        protected function updateName($name,$id)
+        public function create($regatta)
         {
-            return $this->updateName($name,$id);
+            parent::create($regatta);
+        }
+        public function update($regatta)
+        {
+            parent::update($regatta);
+        }
+
+        public function delete($regatta)
+        {
+            parent::delete($regatta);
         }
 
     }

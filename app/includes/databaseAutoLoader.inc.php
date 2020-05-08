@@ -1,7 +1,7 @@
 <?php
     spl_autoload_register(function($className) {        
         $path = $_SERVER['DOCUMENT_ROOT'];
-        $path .= "/sailing-website-mvc/app/storage/database/";
+        $path .= "/mvc-model/app/storage/database/";
         $ext = ".class.php";
         $fullPath = $path . $className . $ext;
 

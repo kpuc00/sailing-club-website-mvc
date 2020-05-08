@@ -69,12 +69,34 @@
             return $stmt->fetchAll();
         }
 
-        protected function updateName($name,$id)
+        protected function create($course)
         {
-            $sql = "UPDATE classes SET ClassName = ? WHERE classID = ?;";
+            $sql = "INSERT classes (ClassName, ClassDescription, classLogo) VALUES (?, ?, ?);";
+
+            $stmt = $this->connect()->prepare($sql); 
+            $stmt->execute([$course->getName(), $course->getDescription(), $course->getLogo()]);
+        }
+
+        protected function update($course)
+        {
+            $sql = "UPDATE classes SET ClassName = ?, ClassDescription = ?, classLogo = ?  WHERE classID = ?;";
 
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$name,$id]); 
+            $stmt->execute([$course->getName(), $course->getDescription(), $course->getLogo(), $course->getId()]); 
+        }
+
+        protected function delete($course)
+        {
+            $sql = "UPDATE coaches SET classID = ? WHERE classID = ?";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([null, $course->getId()]);
+
+
+            $sql = "DELETE FROM classes WHERE classID = ?;";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$course->getId()]);
         }
 
     }

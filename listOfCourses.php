@@ -9,18 +9,28 @@
     <title>List of Classes</title>
     <?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="app/resources/css/listOfClasses.css"> 
+    <link rel="stylesheet" type="text/css" href="app/resources/css/list.css"> 
 </head>
 
 <body>
 
     <?php include 'app/resources/views/layout/navbar.php'; ?>
 
-    <div class="listOfClasses">
+    <div class="list">
         <h1>List of classes</h1>
         <?php
-        $courseObj->courseList();
+            $courseObj= new courseView();
+            $courseObj->list();
         ?>
+    </div>
+
+    <!-- popup -->
+    <div class="popup">
+        <div class="popup-content">
+            <form action="">
+                <!-- code -->
+            </form>
+        </div>
     </div>
     
     <footer>

@@ -9,23 +9,23 @@
     <title>List of regattas</title>
     <?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/bodystyle.css">
-    <link rel="stylesheet" type="text/css" href="app/resources/css/listOfRegattas.css"> 
+    <link rel="stylesheet" type="text/css" href="app/resources/css/list.css"> 
+    <link rel="stylesheet" type="text/css" href="app/resources/css/form-popup.css"> 
 </head>
 
 <body>
 
     <?php include 'app/resources/views/layout/navbar.php'; ?>
 
-    <div class="listOfRegattas">
+    <!-- content -->
+    <div id="data" class="list">
         <h1>List of regattas</h1>
         <?php
-        $regattaObj->regattaList();
+            $regattaObj = new regattaView();
+            $regattaObj->list();
         ?>
     </div>
-    
-    <footer>
-            <?php include 'app/resources/views/layout/footer.php'; ?>
-    </footer>
 
 </body>
+
 </html>

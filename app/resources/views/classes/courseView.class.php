@@ -31,21 +31,28 @@
             }
         }
 
-        public function courseList()
+        public function list()
         {
             $result = $this->getCourseIdName();
            
-            foreach($result as $res){
-                echo "<table>";
-                echo '<tr>';
-                    echo '<td>'. $res["ClassName"] . '</td>';  
-                    echo '<td>' . "<button class='courseListButtons'>Delete</button>" . '</td>';
-                    echo '<td>' . "<button class='courseListButtons'>Change</button>" . '</td>';
-                echo "</tr>";
-                echo "</table>";
+            foreach($result as $res) {
+                echo '<table>';
+                    echo '<tr>';
+                        echo '<td>' . $res["ClassName"] . '</td>';
+                        echo '<td>' . '<a href="editCourse.php?courseId='. $res["classID"].'" id="change">'. "Edit" .'</a>' . '</td>';
+                        echo '<td>'. 
+                                '<form action="app/resources/php/DeleteCourse.php" method="POST">'.
+                                    '<input value='. $res["classID"] .' type="hidden" name="id">'.
+                                    '<button id="delete" type="submit">'. 'Delete' . '</button>'
+                                .'</form>'
+                            .'</td>';
+                    echo '</tr>';
+                echo '</table>';
             }
             
         }
+
+
 
     }
 
