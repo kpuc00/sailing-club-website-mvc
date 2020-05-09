@@ -113,14 +113,13 @@ if (!isset($_SESSION['loggedin'])) {
 			<input type="submit" name="removepic" value="Remove picture">
 		</form>
 	</div>
-
-	<div id="myModal" class="modal">
-		<span class="close">&times;</span>
-		<img class="modal-content" id="img01">
-		<div id="caption"></div>
 	</div>
-
-	</div>
+	
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="img01">
+			<div id="caption"></div>
+		</div>
 	
 	<script src="app/resources/js/fullscreenprofilepic.js"></script>
 

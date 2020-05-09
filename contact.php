@@ -38,12 +38,12 @@
                         <input type="email" id="email" name="email" placeholder="yourname@domain.com" value="<?php echo $_SESSION['email']; ?>" required>
 
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+359234567890" required>
+                        <input type="tel" id="phone" name="phone" placeholder="+359234567890" value="<?php echo $_SESSION['phone']; ?>" required>
 
                         <label for="subject">Message</label>
                         <textarea id="subject" name="subject" placeholder="Your message here.." style="height:200px" required></textarea>
 
-                        <input type="submit" value="Submit" >
+                        <input type="submit" value="Send" >
                     </form>
                 </div>
 
