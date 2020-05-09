@@ -27,7 +27,14 @@
             foreach($result as $row)
             {
                 echo "<tr>";
-                    echo "<td><img class='smallprofilepic' src='app/storage/images/profilepictures/" . $row['profilepicture'] . "'></td>";
+                    if (file_exists('app/storage/images/profilepictures/' . $row['profilepicture']))
+                    {
+                        echo "<td><img class='smallprofilepic' src='app/storage/images/profilepictures/" . $row['profilepicture'] . "'></td>";
+                    }
+                    else 
+                    {
+                        echo "<td><img class='smallprofilepic' src='app/storage/images/profilepictures/loading.gif'></td>";
+                    }
                     echo "<td>" . $row['username'] . "</td>";
                     echo "<td>" . $row['displayname'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
