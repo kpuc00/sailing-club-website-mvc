@@ -48,6 +48,8 @@ if (isset($_SESSION['loggedin'])) {
 
                 <input type="email" id="email" name="email" placeholder="E-mail" required>
 
+                <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+
                 <input type="password" id="password" name="password" placeholder="Password" required>
 
                 <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm password" required>

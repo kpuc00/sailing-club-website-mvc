@@ -6,6 +6,7 @@
         protected $id;
         protected $username;
         protected $email;
+        protected $phone;
         protected $displayName;
         protected $profilePicture;
         protected $userType;
@@ -28,6 +29,11 @@
         public function getEmail() { return $this->email; }
 
         protected function setEmail($email) { $this->email = $email; }
+
+        //email
+        public function getPhone() { return $this->phone; }
+
+        protected function setPhone($phone) { $this->phone = $phone; }
 
         //displayName
         public function getDisplayName() { return $this->displayName; }
@@ -65,14 +71,12 @@
         protected function setError($error) { $this->error = $error; }
 
         //Methods
-        public function __construct($id, $username, $displayName, $email, $userType, $profilePicture, $password) 
+        public function __construct($username, $displayName, $email, $phone, $password) 
         {
-            $this->setId($id);
             $this->setUsername($username);
             $this->setDisplayName($displayName);
             $this->setEmail($email);
-            $this->setUserType($userType);
-            $this->setProfilePicture($profilePicture);
+            $this->setPhone($phone);
             $this->setPassword($password);
 
         }
@@ -86,6 +90,7 @@
             $stmt->bindColumn('id', $givenId);
             $stmt->bindColumn('password', $givenPassword);
             $stmt->bindColumn('email', $givenEmail);
+            $stmt->bindColumn('phone', $givenPhone);
             $stmt->bindColumn('displayname', $givenDisplayname);
             $stmt->bindColumn('profilepicture', $givenProfilepicture);
             $stmt->bindColumn('usertype', $givenUsertype);
@@ -97,6 +102,7 @@
                 {
                     $user->setId($givenId);
                     $user->setEmail($givenEmail);
+                    $user->setPhone($givenPhone);
                     $user->setDisplayName($givenDisplayname);
                     $user->setProfilePicture($givenProfilepicture);
                     $user->setUserType($givenUsertype);
@@ -141,11 +147,11 @@
             if ($stmt->fetchColumn() < 1) 
             {
                 $stmt->closeCursor();
-                $sql = "INSERT INTO accounts (username, password, email, displayname) VALUES (?, ?, ?, ?)";
+                $sql = "INSERT INTO accounts (username, password, email, phone, displayname) VALUES (?, ?, ?, ? ,?)";
 
                 $hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
                 $stmt = $this->connect()->prepare($sql);
-                $stmt->execute([$user->getUsername(), $hashedPassword, $user->getEmail(), $user->getDisplayName()]);
+                $stmt->execute([$user->getUsername(), $hashedPassword, $user->getEmail(), $user->getPhone(), $user->getDisplayName()]);
                 $stmt->closeCursor();
 
                 $sql = "SELECT id, usertype, profilepicture FROM accounts WHERE username = ?";
@@ -195,6 +201,13 @@
             $stmt->execute([$newPassword]);
         }
 
+        protected function changeData($givenId, $givenDisplayname, $givenEmail, $givenPhone)
+        {
+            $sql = "UPDATE accounts SET displayname = ?, email = ?, phone = ? WHERE id = $givenId";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$givenDisplayname, $givenEmail, $givenPhone]);
+        }
+
         protected function saveUserDataToSession($user)
         {
             session_regenerate_id();
@@ -202,11 +215,19 @@
 			$_SESSION['id'] = $user->getId();
             $_SESSION['username'] = $user->getUsername();
             $_SESSION['email'] = $user->getEmail();
+            $_SESSION['phone'] = $user->getPhone();
 			$_SESSION['displayname'] = $user->getDisplayName();
             $_SESSION['profilepicture'] = $user->getProfilePicture();
             $_SESSION['usertype'] = $user->getUserType();
             $_SESSION['registerdate'] = $user->getRegisterDate();
             $_SESSION['lastlogin'] = $user->getLastLogin();
+        }
+
+        protected function delete($givenId)
+        {
+            $sql = "DELETE FROM accounts WHERE id = $givenId";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
         }
         
         protected function logout()

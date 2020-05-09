@@ -31,6 +31,16 @@
         {
             $this->checkPassword($id, $givenPassword);
         }
+
+        public function changeUserData($id, $displayname, $email, $phone)
+        {
+            $this->changeData($id, $displayname, $email, $phone);
+        }
+
+        public function deleteUser($id)
+        {
+            $this->delete($id);
+        }
         
         public function logoutUser()
         {

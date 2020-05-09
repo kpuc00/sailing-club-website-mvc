@@ -9,10 +9,7 @@ h1 {
     color: #4ea9ff;
 }
 
-input[type=username],
-input[type=text],
-input[type=password],
-input[type=email] {
+input {
     font-family: 'Roboto';
     width: 50%;
     padding: 12px;
@@ -25,6 +22,24 @@ input[type=email] {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
+.changeform input {
+    font-family: 'Roboto';
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.changeform label {
+    display: block;
+    text-align: left;
+}
+
 input[type=submit] {
     font-family: 'Roboto';
     background-color: #666666;
@@ -34,13 +49,15 @@ input[type=submit] {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    width: unset;
 }
 
 input[type=submit]:hover {
     background-color: #4ea9ff;
 }
 
-.form {
+.form,
+.changeform {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -51,23 +68,27 @@ input[type=submit]:hover {
     padding: 20px;
 }
 
-.form a:link {
+.form a:link,
+.changeform a:link {
     text-decoration: none;
     color: #ff8566;
     background: none;
 }
 
-.form a:visited {
+.form a:visited,
+.changeform a:visited {
     color: #ff8566;
     background: none;
 }
 
-.form a:hover {
+.form a:hover,
+.changeform a:hover {
     color: #ff3300;
     background: none;
 }
 
-.form a:active {
+.form a:active,
+.changeform a:active {
     color: #ff3300;
     background: none;
 }
@@ -75,6 +96,10 @@ input[type=submit]:hover {
 .error {
     color: #ff0000;
     font-weight: bold;
+    font-size: larger;
+}
+
+.success {
     font-size: larger;
 }
 

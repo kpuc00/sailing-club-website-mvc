@@ -32,7 +32,7 @@
             if ($_SESSION['checkpassword'] == "match") {
                 $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
                 $UsersController->changeUserPassword($userId, $hashedPassword);
-                $_SESSION['passwordsuccess'] = "Your password has been changed!";                
+                $_SESSION['usersuccess'] = "Your password has been changed!";                
                 die(header('Location: ../../../profile.php'));
             }
 

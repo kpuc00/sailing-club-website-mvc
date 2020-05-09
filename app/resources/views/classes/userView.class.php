@@ -17,6 +17,7 @@
                 echo "<th colspan='2'>Username</th>";
                 echo "<th>Display name</th>";
                 echo "<th>E-mail</th>";
+                echo "<th>Phone</th>";
                 echo "<th>Register date</th>";
                 echo "<th>Last login</th>";
                 echo "<th>Type</th>";
@@ -30,6 +31,7 @@
                     echo "<td>" . $row['username'] . "</td>";
                     echo "<td>" . $row['displayname'] . "</td>";
                     echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['phone'] . "</td>";
                     echo "<td>" . $row['registerdate'] . "</td>";
                     echo "<td>" . $row['lastlogin'] . "</td>";
                     echo "<td>" . $row['usertype'] . "</td>";
@@ -78,6 +80,7 @@
                 $_SESSION['profilepicture'] = $usr['profilepicture'];
                 $_SESSION['username'] = $usr['username'];
                 $_SESSION['email'] = $usr['email'];
+                $_SESSION['phone'] = $usr['phone'];
                 $_SESSION['displayname'] = $usr['displayname'];
                 $_SESSION['profilepicture'] = $usr['profilepicture'];
                 $_SESSION['usertype'] = $usr['usertype'];

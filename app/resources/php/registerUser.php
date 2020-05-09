@@ -5,7 +5,7 @@
     {
         $errorMsg = "";
         // Now we check if the data was submitted, isset() function will check if the data exists.
-        if (!isset($_POST['username'], $_POST['password'], $_POST['passwordConfirm'], $_POST['email'], $_POST['displayname'])) {
+        if (!isset($_POST['username'], $_POST['password'], $_POST['passwordConfirm'], $_POST['email'], $_POST['phone'], $_POST['displayname'])) {
             $errorMsg .= "Please complete the registration form!";
         }
 
@@ -20,8 +20,14 @@
         }
 
         //Display name character Length Check
-        else if (strlen($_POST['displayname']) > 20 || strlen($_POST['displayname']) < 5) {
-            $errorMsg .= "The display name must be between 5 and 20 characters long!";
+        else if (strlen($_POST['displayname']) > 20 || strlen($_POST['displayname']) < 4) {
+            $errorMsg .= "The display name must be between 4 and 20 characters long!";
+        }
+
+        //Phone number validation
+        else if(preg_match("/^[0-9]{10}+$/", $_POST['phone']) == 0)
+        {
+            $errorMsg .= "Invalid phone number!";
         }
 
         //Password character Length Check
@@ -38,14 +44,15 @@
         else 
         {
             $username = $_POST["username"];
-            $password = $_POST["password"];
-            $email = $_POST["email"];
             $displayname = $_POST["displayname"];
+            $email = $_POST["email"];
+            $phone = $_POST['phone'];
+            $password = $_POST["password"];
 
-            $user = new User(0, $username, $displayname, $email, null, null, $password);
+            $user = new User($username, $displayname, $email, $phone, $password);
             $UsersController = new UsersController();
             $UsersController->registerUser($user);
-            header('Location: ../../../register.php');
+            die(header('Location: ../../../register.php'));
         }
 
         $_SESSION['error'] = $errorMsg;

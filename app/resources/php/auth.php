@@ -8,11 +8,17 @@
             $username = $_POST["username"];
             $password = $_POST["password"];
 
-            $user = new User(0, $username, null, null, null, null, $password);
+            $user = new User($username, null, null, null, $password);
             $UsersController = new UsersController();
             $UsersController->authenticateUser($user);
             $_SESSION['error'] = $UsersController->checkForErrors($user);
                
+            die(header('Location: ../../../login.php'));
+        }
+
+        else
+        {
+            $_SESSION['error'] = "Please fill in the blanks!";
             header('Location: ../../../login.php');
         }
     }

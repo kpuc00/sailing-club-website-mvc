@@ -17,5 +17,5 @@
     $_SESSION['error'] = null; 
     $_SESSION['success'] = null; 
     $_SESSION['checkpassword'] = null; 
-    $_SESSION['passwordsuccess'] = null; 
+    $_SESSION['usersuccess'] = null; 
 ?>

@@ -1,13 +1,12 @@
 <?php
     include 'app/includes/main.inc.php'; 
-    $deletedProfile = $_GET['deletedProfile'] ?? '';
 ?>
 
 <?php
-//If the user is logged in redirect to the index page...
-if (isset($_SESSION['loggedin'])) {
-    header('Location: index.php');
-    exit;
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: login.php');
+	exit;
 }
 ?>
 
@@ -15,7 +14,7 @@ if (isset($_SESSION['loggedin'])) {
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Delete profile</title>
     <?php include 'app/resources/php/head.php'; ?>
     <link rel="stylesheet" type="text/css" href="app/resources/css/login.css">
 </head>
@@ -27,34 +26,31 @@ if (isset($_SESSION['loggedin'])) {
 
     <div class="content">
 
-        <h1>Login</h1>
+        <h1>Delete profile</h1>
+
+        <?php echo "<img class='profilepic' src='app/storage/images/profilepictures/".$_SESSION['profilepicture']."'>"; ?>
+        <h3><?=$_SESSION['displayname']?></h3>
+        <h4>Hey, <?=$_SESSION['displayname']?>. We are sorry that you are leaving our club. If you delete your account, you cannot recover your data!</h4>
 
         <div class="form">
 
-            <form action="app/resources/php/auth.php" method="post">
-                <h3>Enter your credentials:</h3>
+            <form action="app/resources/php/deleteProfile.php" method="post">
+                <h3>Enter your password:</h3>
 
                 <?php
                     if (isset($_SESSION['error'])) 
                     {
                         echo '<div class="error"><p>' . $_SESSION['error'] .'</p></div>';
                     }
-                    if (isset($deletedProfile) && $deletedProfile == true) 
-                    {
-                        echo '<div class="success"><p>Your account has been successfully deleted!</p></div>';
-                    }
 			    ?>
 
                 <hr>
-
-                <input type="username" id="username" name="username" placeholder="Username" required>
 
                 <input type="password" id="password" name="password" placeholder="Password" required>
 
                 <hr>
 
-                <input type="submit" name="submit" value="Login">
-                <h3>Not registered? <a href='register.php'>Register</a></h3>
+                <input type="submit" name="submit" value="Delete profile">
 
             </form>
         </div>
