@@ -37,6 +37,10 @@ textarea {
     resize: none;
 }
 
+textarea {
+    height: 30vh;
+}
+
 input[type=submit] {
     font-family: 'Roboto';
     background-color: #666666;

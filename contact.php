@@ -41,7 +41,7 @@
                         <input type="tel" id="phone" name="phone" placeholder="+359234567890" value="<?php echo $_SESSION['phone'] ?? ''; ?>" required>
 
                         <label for="subject">Message</label>
-                        <textarea id="subject" name="subject" placeholder="Your message here.." style="height:200px" required></textarea>
+                        <textarea id="subject" name="subject" placeholder="Your message here.." required></textarea>
 
                         <input type="submit" value="Send" >
                     </form>

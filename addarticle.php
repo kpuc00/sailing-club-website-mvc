@@ -47,7 +47,7 @@ if ($_SESSION['usertype'] == "User") {
                 <input type="text" id="title" name="title" placeholder="Title..." value="" required>
 
                 <label for="content">Content</label>
-                <textarea id="content" name="content" placeholder="Content here.." style="height:200px" required></textarea>
+                <textarea id="content" name="content" placeholder="Content here.." required></textarea>
 
                 <input type="submit" value="Submit" >
             </form>
