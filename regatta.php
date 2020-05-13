@@ -18,19 +18,20 @@
         <!-- Content Start -->
         <div class="content">
 
-            <?php if(isset($_SESSION['loggedin'])){ ?>
-                <a href="takePartRace.php?regattaID=<?php echo $regattaID; ?>">
-                    <input type="submit" value="Take part"/>
-                </a>
-            <?php
-            } 
-            else { ?>
-                <a href="login.php">
-                    <input type="submit" value="Take part"/>
-                </a>            
-            <?php
-            }
-            ?>
+        <?php if(isset($_SESSION['loggedin'])){ ?>
+            <a href="takePartRace.php?regattaId=<?php echo $_GET["regattaId"]?>">
+                <input type="submit" value="Take part"/>
+            </a>
+        <?php
+        } 
+        else { ?>
+            <a href="login.php">
+                <input type="submit" value="Take part"/>
+            </a>            
+        <?php
+        }
+        ?>
+
             
             <!-- Table Of Competitors Start -->
             <table>

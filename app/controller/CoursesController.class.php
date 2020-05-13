@@ -9,11 +9,11 @@
         
         public function getCourses() {
             $result = $this->getAll();
-            $courses = [count($result)];
+            $courses = array();
             
             $i = 0;
             foreach($result as $course) {
-                $courses[$i] = new Course($result[$i]['classID'], $result[$i]['ClassName'], $result[$i]['ClassDescription'], $result[$i]['classLogo']);
+                array_push($courses, new Course($result[$i]['classID'], $result[$i]['ClassName'], $result[$i]['ClassDescription'], $result[$i]['classLogo']));
                 $i++;
             }
 

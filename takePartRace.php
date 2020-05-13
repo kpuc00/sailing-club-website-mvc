@@ -19,7 +19,7 @@
 
         <h1 id="registrationTitle">Registration Form</h1>
 
-        <form action="fetchData/InsertCompetitor.php?regattaID=<?php echo $_GET["regattaID"]?>" method="POST" onsubmit="return validate()">
+        <form action="app/resources/php/InsertCompetitor.php?regattaId=<?php echo $_GET["regattaId"]?>" method="POST" onsubmit="return validate()">
             <div class = "raceRegistrationForm">
                 <div id="firstNameField">
                     <label  for="firstName">First Name</label></br>

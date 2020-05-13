@@ -24,13 +24,19 @@
         {
             $result = parent::getRegattaCompetitorsByRegattaId($id);
 
-            $competitors = [count($result)];
+            $competitors = array();
+            
             $i = 0;
             foreach($result as $r) {
-                $competitors[$i] = new Competitor($r["competitorID"], $r["Name"], $r["LastName"], $r["Age"], $r["Club"], $r["raceID"]);
+                array_push($competitors, new Competitor($r["competitorID"], $r["Name"], $r["LastName"], $r["Age"], $r["Club"], $r["raceID"])); 
             }
 
             return $competitors;
+        }
+
+        public function AddCompetitor($competitor)
+        {
+            parent::AddCompetitor($competitor);
         }
 
         public function create($regatta)

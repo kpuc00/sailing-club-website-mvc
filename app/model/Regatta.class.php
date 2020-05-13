@@ -57,6 +57,14 @@
             return $stmt->fetchAll();
         }
 
+        protected function AddCompetitor($competitor) 
+        {
+            $sql = "INSERT INTO competitors (Name, LastName, Age, Club, raceID) VALUES (?, ?, ?, ?, ?);";
+
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$competitor->getFirstName(), $competitor->getLastName(), $competitor->getAge(), $competitor->getClub(), $competitor->getRaceId()]);
+        }
+
         protected function create($regatta) 
         {
             $sql = "INSERT INTO races (RaceName) VALUES (?);"   ;
