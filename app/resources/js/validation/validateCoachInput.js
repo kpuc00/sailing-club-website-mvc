@@ -10,6 +10,7 @@ function validate() {
     //let coachClassError = document.getElementById("coachClassError");
     let coachPictureError = document.getElementById("coachPictureError");
     let coachPictureValue = coachPicture.value;
+    let fileSize = coachPicture.files[0].size;
 
     if (coachFirstName.value == "") {
         coachFirstName.placeholder = "The coach name is required!";
@@ -91,7 +92,13 @@ function validate() {
         let coachExtension = coachPictureValue.substring(coachPictureValue.lastIndexOf('.') + 1).toLowerCase();
         if (coachExtension == "png"){
             coachPictureError.textContent = "";
-            true;
+            if(fileSize > 2097152){
+                alert("file too large")
+                return false;
+            }
+            else{
+               true; 
+            }   
         }
         else{
             alert("file must be .png");

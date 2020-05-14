@@ -6,6 +6,7 @@ function validate() {
     let classDescriptionError = document.getElementById("classDescriptionError");
     let classPictureError = document.getElementById("classPictureError");
     let pictureValue = classPicture.value;
+    let fileSize = classPicture.files[0].size;
 
     if (className.value == "") {
         className.placeholder = "The class name is required!";
@@ -61,7 +62,13 @@ function validate() {
         let extension = pictureValue.substring(pictureValue.lastIndexOf('.') + 1).toLowerCase();
         if (extension == "png"){
             classPictureError.textContent = "";
-            true;
+            if(fileSize > 2097152){
+                alert("file too large")
+                return false;
+            }
+            else{
+               true; 
+            }            
         }
         else{
             alert("file must be .png");

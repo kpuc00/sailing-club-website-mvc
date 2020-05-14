@@ -13,11 +13,20 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
+ul{
+    list-style: none;
+}
+
+#timetableTitle{
+    font-size: 20px;
+    color: #4ea9ff;
+}
+
 .class_title {
     grid-column: 1/3;
     grid-row: 1/2;
     text-align: center;
-    font-size: 30px;
+    font-size: 34px;
     color: #4ea9ff;
     font-weight: bold;
     margin: 1em;

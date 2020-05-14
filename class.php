@@ -33,6 +33,7 @@
             </div>
 
             <div class="timetable">
+                <p id="timetableTitle">Timetable</p>
                 <ul>
                     <li>Monday : 10:00-11:30</li>
                     <li>Tuesday : 10:00-11:30</li>
