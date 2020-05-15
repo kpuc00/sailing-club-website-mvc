@@ -28,6 +28,10 @@
                 <?php echo $course->getName(); ?>
             </div>
 
+            <div class="class_logo">
+                <img src='app/storage/images/course-img/<?php echo $course->getLogo(); ?>'>
+            </div>
+
             <div class="class_description">
                 <p><?php echo $course->getDescription(); ?></p>
             </div>
@@ -45,12 +49,14 @@
                 </ul>
             </div>
             <!-- Course Section End  -->
+
+            <hr>
             
             <!-- Coach Section start -->
             <div class="coach_content">
                 <div class="coach_picture">
                     <img src="app/storage/images/coach-img/<?php echo $coach->getPicture(); ?>" alt="" height="200" width="200">
-
+                    <h4>Coach of this class:</h4>
                     <p><?php echo $coach->getFirstName() . " " . $coach->getLastName(); ?></p>
                 </div>
 
